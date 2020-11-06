@@ -1,11 +1,10 @@
 #pragma once
-#include "Entity.h"
-#include <SFML/Graphics.hpp>
-#include "Collider.h"
+#include "../Entities/Entity.h"
+#include "../Subsystems/Collider.h"
 class Tile : public Entity
 {
 private:
-	sf::Vector2u currentImage;	
+	sf::Vector2u currentImage;
 	sf::Texture tex;
 	sf::IntRect uvRect;
 	sf::Vector2u imageCount;

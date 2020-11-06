@@ -1,5 +1,5 @@
 #include "MouseClass.h"
-#include "Inventory.h"
+#include "../Inventory/Inventory.h"
 
 MouseClass::MouseClass()
 {

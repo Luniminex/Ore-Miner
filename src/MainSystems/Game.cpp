@@ -29,11 +29,11 @@ void Game::gameLoop() {
 	Texts framerateText;
 	framerateText.createTextOnScreen((sf::Vector2f)win.mapCoordsToPixel(sf::Vector2f(100,100)), 100, sf::Vector2f(0.04f, 0.04f), win, "Framerate:");
 
-	Manager* manager = new Manager;	
+	Manager* manager = new Manager;
 
-	tilemap.loadFromFile("ground.png","TheMap.txt");
+	tilemap.loadFromFile("content/Map/ground.png","content/Map/TheMap.txt");
 
-	Player player("Johny", "animplayer.png", sf::Vector2f(0.f, 0.f),
+	Player player("Johny", "content/Player/animplayer.png", sf::Vector2f(0.f, 0.f),
 		sf::Vector2f(16.0f, 16.0f),&itemmanager);
 
 	ObjectGenerator objGenerator;
@@ -52,7 +52,6 @@ void Game::gameLoop() {
 		sf::Time elapsed = ParticleClock.restart();
 
 		sf::Event evnt;
-		float lasttime = 0;
 		while (win.pollEvent(evnt)) {
 			switch (evnt.type) {
 			case sf::Event::Closed:

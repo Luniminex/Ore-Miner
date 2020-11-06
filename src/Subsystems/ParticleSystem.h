@@ -10,10 +10,10 @@ struct Particle {
 class ParticleSystem : public sf::Drawable, public sf::Transformable
 {
 private:
+	sf::Vector2f m_emitter;
 	std::vector<Particle> m_particles;
 	sf::VertexArray m_vertices;
 	sf::Time m_lifetime;
-	sf::Vector2f m_emitter;
 	sf::Texture tex;
 	sf::Image img;
 	sf::IntRect UVrect;

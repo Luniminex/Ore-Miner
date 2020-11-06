@@ -4,9 +4,7 @@
 
 #include "../TextManager/TextManager.h"
 #include "../Inventory/InventoryControl.h"
-
-struct box;
-struct valuesForDrawing;
+#include "DataStructs/data.h"
 
 class Inventory;
 
@@ -26,7 +24,7 @@ private:
 
 	sf::Texture m_texture;
 
-	const std::string m_path = "InventoryControl.png";
+	const std::string m_path = "content/Inventory/InventoryControl.png";
 
 	int m_selectedPartOfInvetory = 0;
 

@@ -3,8 +3,9 @@
 
 Entity::Entity(){}
 
+void Entity::update(){
 
-void Entity::update() { std::cout << "woops"; };
+}
 
 void Entity::draw(){}
 

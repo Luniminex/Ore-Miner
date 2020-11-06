@@ -2,13 +2,13 @@
 
 ParticleSystem::ParticleSystem(size_t count) :
 	m_emitter(0, 0),
+	m_particles(count),
 	m_vertices(sf::Quads, count * 4),
-    m_particles(count),
 	m_lifetime(sf::seconds(3.f))
 {
 	static int noInst;
 	noInst++;
-	img.loadFromFile("items.png");
+	img.loadFromFile("content/Items/items.png");
 	tex.loadFromImage(img);
 	tex.setRepeated(true);
 }
@@ -53,7 +53,7 @@ void ParticleSystem::updateParticles(sf::Time elapsed, float deltaTime) {
 			p.velocity -= p.gravityForce;
 			m_vertices[i].position += p.velocity * deltaTime;
 
-			float ratio = p.lifetime.asSeconds() / m_lifetime.asSeconds();
+			//float ratio = p.lifetime.asSeconds() / m_lifetime.asSeconds();
 			//m_vertices[i].color.a = static_cast<sf::Uint8>(310 + (255 * ratio));
 			m_vertices[i].color.a = static_cast<sf::Uint8>(255);
 		}

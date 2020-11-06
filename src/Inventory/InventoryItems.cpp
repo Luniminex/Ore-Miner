@@ -4,7 +4,7 @@
 InventoryItems::InventoryItems(int x) {
 	x--;
 	initVectors();
-	m_texture.loadFromFile("oneitemsheet.png");
+	m_texture.loadFromFile("content/Items/oneitemsheet.png");
 }
 
 void InventoryItems::initVectors() {
@@ -36,7 +36,7 @@ void InventoryItems::loadItemsToSlots(std::vector<box> boxes, ItemManager& itemm
 void InventoryItems::loadResources(const std::vector<box>& boxes, ItemManager& itemman,
 	int& counterFornoTexts, int& lastBoxData, int& lastInvBox, sf::Vector2f itemTexOffset) {
 
-	for (int i = lastInvBox; i < itemman.getNoResources(); i++)
+	for (unsigned int i = lastInvBox; i < itemman.getNoResources(); i++)
 	{
 		if (itemman.resources.at(i)->getAmount() > 0) {
 
@@ -70,7 +70,7 @@ void InventoryItems::loadPickaxes(const std::vector<box>& boxes, ItemManager& it
 	int itemIndex = 0;
 	int size = lastInvBox; // must be different cuz the other one gets incremented
 
-	for (int i = lastInvBox; i < (size + itemman.getNoPickaxes()); i++) // size + last
+	for (unsigned int i = lastInvBox; i < (size + itemman.getNoPickaxes()); i++) // size + last
 	{
 		itemIndex = i - size; // from 0 to size of pickaxes
 		if (itemman.pickaxes.at(itemIndex)->isOWned() && !itemman.pickaxes.at(itemIndex)->isEquiped()) {
@@ -97,7 +97,7 @@ void InventoryItems::loadArmour(const std::vector<box>& boxes, ItemManager& item
 	int itemIndex = 0;
 	int size = lastInvBox;
 
-	for (int i = lastInvBox; i < (size + itemman.getNoArmours()); i++)
+	for (unsigned int i = lastInvBox; i < (size + itemman.getNoArmours()); i++)
 	{
 		itemIndex = i - size;
 		if (itemman.armours.at(itemIndex)->isOWned() && !itemman.armours.at(itemIndex)->isEquiped()) {

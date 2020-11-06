@@ -16,7 +16,7 @@ sf::Vector2f ConcreteTileObject::getPosRelativeToGrid(sf::Vector2f pos) {
 }
 
 ConcreteTileObject::ConcreteTileObject(SharedTileObject* shared, sf::Vector2f pos, int life) {
-	
+
 	initConcreteObject(shared);
 
 	Concretebody.setPosition(getPosRelativeToGrid(pos));
@@ -97,10 +97,10 @@ void ObjectGenerator::generateObjects(Player& player) {
 
 	left.x = playerPos.x - (range.x / 2);
 	if (left.x < 0) left.x = 0;
-	if (left.x > mapWidth - 1) left.x = mapWidth - 1;
+	if (left.x > (float)mapWidth - 1) left.x = mapWidth - 1;
 	left.y = playerPos.y - (range.y / 2);
 	if (left.y < 0) left.y = 0;
-	if (left.y > mapHeight - 1) left.y = mapHeight - 1;
+	if (left.y > (float)mapHeight - 1) left.y = mapHeight - 1;
 	sf::Vector2i border = { playerPos.x + (range.x / 2), playerPos.y + (range.y / 2) };
 
 	if (playerLastPos != playerPos) {
@@ -114,7 +114,7 @@ void ObjectGenerator::generateObjects(Player& player) {
 					scannedTiles[j][i] = scanned;
 				}
 			}
-			
+
 		}
 	}
 }
@@ -186,6 +186,8 @@ void ObjectManager::spawnObject(int type, sf::Vector2f pos) {
 		break;
 	case 21:objects.push_back(new ConcreteTileObject(smallOrangeFlower, pos, 1));
 		break;
+	default:
+	std::cout<<"OBJECT ERROR"<<std::endl;
 	}
 }
 

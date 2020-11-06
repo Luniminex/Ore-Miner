@@ -51,8 +51,7 @@ void Inventory::initVectors()
 	m_vertices.resize(1000);
 
 	m_boxes.resize(600);
-	for
-		it(int i = 0; i < 600; i++)
+	for(unsigned int i = 0; i < 600; i++)
 		{
 			m_boxes.at(i).pos.resize(4);
 		}
@@ -69,7 +68,7 @@ int Inventory::initInv(sf::Vector2f pos)
 	int lastIndex = 0;
 	int startOfInvetoryBoxes = 0;
 
-	m_texture.loadFromFile("inventorysheet.png");
+	m_texture.loadFromFile(path);
 
 	lastIndex = setInventoryBox(positions, lastIndex, pos);
 	lastIndex = setSettingsBox(positions, lastIndex, pos);
@@ -79,7 +78,6 @@ int Inventory::initInv(sf::Vector2f pos)
 	lastIndex = setArmours(positions, lastIndex, pos);
 
 	startOfInvetoryBoxes = lastIndex;
-	startOfInvetoryBoxes;
 	lastIndex = setBoxes(positions, lastIndex, pos);
 
 	return startOfInvetoryBoxes; // start of inventory boxes

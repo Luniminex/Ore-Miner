@@ -12,7 +12,7 @@ public:
 	sf::Texture tex;
 	sf::Vector2f size = { 32.0f,32.0f };
 	sf::IntRect uvRect;
-	std::string path = "testicek.png";
+	std::string path = "content/Objects/testicek.png";
 	sf::Vector2f scale = {1.f,1.f};
 	unsigned int resourceDropID = 0;
 	unsigned int amountDrop = 0;

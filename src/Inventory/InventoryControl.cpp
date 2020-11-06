@@ -1,4 +1,5 @@
 #include "InventoryControl.h"
+#include "../Inventory/Inventory.h"
 
 
 InventoryControl::InventoryControl()

@@ -23,7 +23,7 @@ Texts::Texts(){
 }
 
 void Texts::createTextOnMap(sf::Vector2f mapPosition, unsigned int charSize, sf::Vector2f scale, const std::string& constText) {
-	font.loadFromFile("FFFFORWA.TTF");
+	font.loadFromFile("content/Fonts/FFFFORWA.TTF");
 	sf::Texture& tex = const_cast<sf::Texture&>(font.getTexture(charSize));
 	this->constText = constText;
 	tex.setSmooth(false);
@@ -34,9 +34,9 @@ void Texts::createTextOnMap(sf::Vector2f mapPosition, unsigned int charSize, sf:
 	text.setString(this->constText);
 }
 
-void Texts::createTextOnScreen(sf::Vector2f mapPosition, unsigned int charSize, sf::Vector2f scale, 
+void Texts::createTextOnScreen(sf::Vector2f mapPosition, unsigned int charSize, sf::Vector2f scale,
 	sf::RenderWindow& win, const std::string& constText) {
-	font.loadFromFile("FFFFORWA.TTF");
+	font.loadFromFile("content/Fonts/FFFFORWA.TTF");
 	this->constText = constText;
 	sf::Texture& tex = const_cast<sf::Texture&>(font.getTexture(charSize));
 	tex.setSmooth(false);

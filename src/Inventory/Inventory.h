@@ -5,12 +5,7 @@
 #include "../TextManager/TextManager.h"
 #include "../Inventory/InventoryItems.h"
 #include "../Inventory/InventoryControl.h"
-
-
-
-struct box;
-
-struct valuesForDrawing;
+#include "DataStructs/data.h"
 
 class InventoryItems;
 class InventoryControl;
@@ -23,6 +18,8 @@ private:
 	std::vector<box> m_boxes;
 	sf::VertexArray m_vertices;
 	sf::Texture m_texture;
+
+	std::string path = "content/Inventory/inventorysheet.png";
 
 	valuesForDrawing settingsBox; //data
 	valuesForDrawing inventoryBox; //data
